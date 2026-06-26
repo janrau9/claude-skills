@@ -1,6 +1,6 @@
 ---
 name: doc-writer
-description: Generate and maintain Markdown documentation in a project's docs/ folder as an LLM wiki — numbered files and folders, a 00-index.md table of contents per level, and dense cross-links, following Karpathy's LLM-wiki convention. Use whenever the user asks to write, create, or generate a .md doc, add or update documentation, document a feature/module/API, or set up a docs/ structure. Creates docs/ and its docs/CLAUDE.md guide if they don't exist.
+description: Generate and maintain Markdown documentation in a project's docs/ folder as an LLM wiki — numbered files and folders, a 00-index.md table of contents per level, dense cross-links, and an append-only log.md change log, following Karpathy's LLM-wiki convention. Use whenever the user asks to write, create, or generate a .md doc, add or update documentation, document a feature/module/API, or set up a docs/ structure. Creates docs/ and its docs/CLAUDE.md guide if they don't exist.
 ---
 
 # Doc Writer
@@ -34,6 +34,8 @@ wiki pages) — unless the user explicitly asks to put something there.
    [`templates/docs-CLAUDE.md`](templates/docs-CLAUDE.md) to `docs/CLAUDE.md`.
 3. If `docs/00-index.md` is missing → copy
    [`templates/00-index.md`](templates/00-index.md), filling in the project name.
+4. If `docs/log.md` is missing → copy [`templates/log.md`](templates/log.md). This is the
+   maintained change log — the second of the wiki's two navigation files.
 
 ## Generating a doc (every time)
 
@@ -50,7 +52,9 @@ wiki pages) — unless the user explicitly asks to put something there.
 5. **Update the index.** Add the entry to that level's `00-index.md` in numeric order, with
    a one-line summary and relative link.
 6. **Back-link.** Add reciprocal links from closely related pages.
-7. **Log it.** If `docs/log.md` exists (or the convention calls for one), append a line.
+7. **Log it.** Append a dated line to `docs/log.md` (`[ingest]` new page, `[update]` edit,
+   `[lint]` cleanup), creating the file from [`templates/log.md`](templates/log.md) if it's
+   missing.
 
 ## Inserting between existing docs
 

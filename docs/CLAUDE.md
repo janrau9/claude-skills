@@ -26,14 +26,16 @@ of the [`doc-writer`](../skills/doc-writer/SKILL.md) skill.)
 - **Sort order = read order.** Listing a folder alphabetically yields the intended reading
   sequence, top to bottom.
 - Subfolders are numbered too, and each contains its own `00-index.md`.
-- `CLAUDE.md` and an optional `log.md` are the only unnumbered files — they are meta, not
-  content.
+- `CLAUDE.md` and `log.md` are the only unnumbered files — they are meta, not content.
+  `00-index.md` and `log.md` are the wiki's two **navigation tools**: the index answers
+  "what exists?", the log answers "what changed, and when?"
 
 Example tree:
 
 ```
 docs/
 ├── CLAUDE.md             ← this schema (unnumbered)
+├── log.md                ← append-only change log (unnumbered)
 ├── 00-index.md           ← top-level table of contents
 ├── 01-creating-a-skill.md
 ├── 02-installing-skills.md
@@ -76,20 +78,26 @@ Whenever you add, remove, rename, or renumber a file/folder, **update the releva
 
 - **Create / ingest.** New doc → pick the right folder (or create a numbered one) → take the
   next free `NN-` prefix → write the page → update that level's `00-index.md` → add
-  cross-links from related pages → append a `log.md` line if you keep one.
+  cross-links from related pages → **append a `log.md` line**.
 - **Insert / renumber.** Inserting between `02` and `03`? Renumber the tail (`03 → 04`, …),
   fix every link that pointed at them, update the index — in one pass.
 - **Lint (periodically).** Scan for: entries missing from an index, orphaned pages, broken
   relative links, stale claims that no longer match the raw sources, and contradictory
   pages. Fix or flag.
 
-## log.md (optional but recommended)
+## log.md — the change log
 
-Append-only, newest at the bottom, one line per change, with a stable prefix:
+Karpathy's LLM wiki keeps **two** navigation files: `index.md` (here, `00-index.md`) and
+`log.md`. `log.md` is the maintained change log — an append-only, chronological record so
+any agent can reconstruct *what changed and when* without diffing git.
+
+Keep one `log.md` at the top of `docs/`. Newest at the bottom, one dated line per change,
+with a stable prefix (`[ingest]` new page, `[update]` edit, `[lint]` cleanup):
 
 ```
-[ingest] 01-creating-a-skill.md — initial guide
-[update] 03-skills-catalog/00-index.md — registered doc-writer
+2026-06-26 [ingest] 01-creating-a-skill.md — initial guide
+2026-06-26 [update] 03-skills-catalog/00-index.md — registered doc-writer
+2026-06-26 [lint]   fixed 3 broken links under 03-reference/
 ```
 
-Use the real date when it's known and useful.
+Append a line on every change, in the same pass that you touch the page and its index.

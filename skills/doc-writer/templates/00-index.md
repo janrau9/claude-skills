@@ -1,7 +1,8 @@
 # 00 · Index — <PROJECT> docs
 
 > Documentation for <PROJECT>, maintained as an LLM wiki. Read top to bottom; every entry is
-> numbered. See [CLAUDE.md](CLAUDE.md) for the conventions.
+> numbered. See [CLAUDE.md](CLAUDE.md) for the conventions and [log.md](log.md) for the
+> change log.
 
 <!--
 Add entries in numeric order as docs are created, e.g.:

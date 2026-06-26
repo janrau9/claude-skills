@@ -15,12 +15,14 @@ When the user asks to write, create, or update any `.md` documentation, the skil
 2. Places the new page in the right numbered folder with the next free `NN-` prefix.
 3. Writes it Karpathy-style: H1 → one-line TL;DR → body, with relative cross-links and
    citations to raw sources (linked, never copied).
-4. Updates the relevant `00-index.md` and adds back-links.
+4. Updates the relevant `00-index.md`, adds back-links, and appends a dated line to
+   `docs/log.md` — the maintained change log.
 
 ## Templates it ships
 
 - `templates/docs-CLAUDE.md` → installed as a project's `docs/CLAUDE.md` (the schema).
 - `templates/00-index.md` → the starter top-level table of contents.
+- `templates/log.md` → the starter change log.
 
 ## Convention
 
