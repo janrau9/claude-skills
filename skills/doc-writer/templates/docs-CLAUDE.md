@@ -90,6 +90,11 @@ Whenever you add, remove, rename, or renumber a file/folder, **update the releva
 - **Lint (periodically).** Scan for: entries missing from an index, orphaned pages (nothing
   links to them), broken relative links, stale claims that no longer match the raw sources,
   and contradictory pages. Fix or flag.
+- **Adopt (brownfield).** Bringing an existing free-form `docs/` under this convention?
+  Confirm first — renames break inbound links. Then propose a numbering map, rename the files
+  to `NN-` slugs, register them in `00-index.md`, fix internal links, and append an `[adopt]`
+  line to `log.md`. The non-destructive alternative is to leave existing files as-is and only
+  number new pages.
 
 ## log.md — the change log
 
@@ -98,7 +103,8 @@ Karpathy's LLM wiki keeps **two** navigation files: `index.md` (here, `00-index.
 any agent can reconstruct *what changed and when* without diffing git.
 
 Keep one `log.md` at the top of `docs/`. Newest at the bottom, one dated line per change,
-with a stable prefix (`[ingest]` new page, `[update]` edit, `[lint]` cleanup):
+with a stable prefix (`[ingest]` new page, `[update]` edit, `[lint]` cleanup, `[adopt]`
+migration):
 
 ```
 2025-01-01 [ingest] 01-getting-started.md — initial setup guide

@@ -18,6 +18,11 @@ When the user asks to write, create, or update any `.md` documentation, the skil
 4. Updates the relevant `00-index.md`, adds back-links, and appends a dated line to
    `docs/log.md` — the maintained change log.
 
+In an existing repo it follows any convention already in `docs/`, or — for a free-form
+`docs/` — offers to **adopt** it (renumber + index existing files) only after confirmation,
+defaulting to non-destructive coexistence otherwise. Existing pages are edited in place, not
+duplicated.
+
 ## Templates it ships
 
 - `templates/docs-CLAUDE.md` → installed as a project's `docs/CLAUDE.md` (the schema).

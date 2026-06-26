@@ -1,6 +1,6 @@
 ---
 name: doc-writer
-description: Generate and maintain Markdown documentation in a project's docs/ folder as an LLM wiki — numbered files and folders, a 00-index.md table of contents per level, dense cross-links, and an append-only log.md change log, following Karpathy's LLM-wiki convention. Use whenever the user asks to write, create, or generate a .md doc, add or update documentation, document a feature/module/API, or set up a docs/ structure. Creates docs/ and its docs/CLAUDE.md guide if they don't exist.
+description: Generate and maintain Markdown documentation in a project's docs/ folder as an LLM wiki — numbered files and folders, a 00-index.md table of contents per level, dense cross-links, and an append-only log.md change log, following Karpathy's LLM-wiki convention. Use whenever the user asks to write, create, or generate a .md doc, add or update documentation, document a feature/module/API, or set up a docs/ structure. Creates docs/ and its docs/CLAUDE.md guide if they don't exist. Works in existing repos too: follows a convention already in docs/, or offers (with confirmation) to adopt a free-form docs/ rather than imposing one, and edits existing pages in place.
 ---
 
 # Doc Writer
@@ -27,15 +27,22 @@ wiki pages) — unless the user explicitly asks to put something there.
   not exist, create it.
 - If the user names an explicit path, honor it. Otherwise default to `docs/`.
 
-## First-run setup (do this if the pieces are missing)
+## Setting up docs/ (assess first)
 
-1. If `docs/` is missing → create it.
-2. If `docs/CLAUDE.md` is missing → copy this skill's
-   [`templates/docs-CLAUDE.md`](templates/docs-CLAUDE.md) to `docs/CLAUDE.md`.
-3. If `docs/00-index.md` is missing → copy
-   [`templates/00-index.md`](templates/00-index.md), filling in the project name.
-4. If `docs/log.md` is missing → copy [`templates/log.md`](templates/log.md). This is the
-   maintained change log — the second of the wiki's two navigation files.
+Before creating anything, classify the current `docs/`:
+
+- **Absent or empty** → greenfield. Create `docs/` and copy in the scaffold:
+  1. `docs/CLAUDE.md` ← [`templates/docs-CLAUDE.md`](templates/docs-CLAUDE.md)
+  2. `docs/00-index.md` ← [`templates/00-index.md`](templates/00-index.md) (fill in the project name)
+  3. `docs/log.md` ← [`templates/log.md`](templates/log.md) — the change log
+
+  (`plans.md` is opt-in — see below — and is never auto-created.)
+- **Already on a convention** — it has its own `docs/CLAUDE.md`, or its files are numbered →
+  follow what's there; do **not** impose this one. Only fill in a missing `00-index.md` or
+  `log.md`, matching the existing style.
+- **Populated but free-form** — real `.md` files, but no `docs/CLAUDE.md` and no numbering →
+  **do not silently impose the convention.** Go to [Working in an existing
+  repo](#working-in-an-existing-repo-brownfield) and confirm with the user first.
 
 ## Generating a doc (every time)
 
@@ -56,15 +63,41 @@ wiki pages) — unless the user explicitly asks to put something there.
    `[lint]` cleanup), creating the file from [`templates/log.md`](templates/log.md) if it's
    missing.
 
+## Updating an existing page
+
+When the change belongs in a page that already exists, edit it in place — don't add a
+near-duplicate:
+
+1. Find the right page via `00-index.md`; read it.
+2. Edit the content; refresh any claim the raw sources no longer support; keep the TL;DR
+   accurate.
+3. Fix or add the cross-links the change touches.
+4. Renumber/retitle only if the topic genuinely moved — then update the index and inbound
+   links too.
+5. Append an `[update]` line to `docs/log.md`.
+
 ## Inserting between existing docs
 
 Renumber the tail (`03 → 04`, …), fix every link that pointed at the moved files, and update
 the `00-index.md` — all in one pass.
 
-## Respect what's there
+## Working in an existing repo (brownfield)
 
-If `docs/` already has a numbering scheme or its own `docs/CLAUDE.md`, follow it. Don't
-impose a conflicting convention on an existing wiki.
+When `docs/` already holds free-form, un-numbered files and has no `docs/CLAUDE.md`, **pause
+and offer two paths** — default to coexist if the user doesn't choose:
+
+- **Coexist (default, non-destructive).** Leave every existing file exactly as it is. Add
+  `docs/CLAUDE.md`, `00-index.md`, and `log.md`; list the existing files in `00-index.md`
+  as-is under an "Existing docs" note; apply the numbered convention only to *new* pages.
+  Nothing is renamed.
+- **Adopt / migrate (only after explicit confirmation).** Renaming files breaks inbound links
+  (READMEs, code comments, external URLs), so confirm first. Then, in one pass: propose a
+  numbering map → rename each file to its `NN-` slug → register them in `00-index.md` → fix
+  every internal link that pointed at the old names → append one `[adopt]` line to `log.md`.
+  Flag any external links you cannot update.
+
+If the project already has its own `docs/CLAUDE.md` or numbering, neither applies — follow
+what's there, and don't impose a conflicting convention.
 
 ## plans.md (opt-in — do not auto-create)
 
