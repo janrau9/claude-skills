@@ -65,3 +65,16 @@ the `00-index.md` — all in one pass.
 
 If `docs/` already has a numbering scheme or its own `docs/CLAUDE.md`, follow it. Don't
 impose a conflicting convention on an existing wiki.
+
+## plans.md (opt-in — do not auto-create)
+
+`plans.md` is a third, optional meta-file: a task list of forward-looking work that's **not
+yet true**. Do **not** scaffold it on first run. Create it (from
+[`templates/plans.md`](templates/plans.md)) only when the user wants to track planned work
+in-repo.
+
+Keep it separate from the numbered knowledge pages. When a planned item **ships**: write the
+resulting knowledge into the right numbered page, append a `log.md` line, then **remove the
+item from `plans.md`** (promote-and-prune). When it's **abandoned**: remove it (optionally a
+`[plan] dropped …` line in `log.md`). Never leave done/dead items behind as checked boxes —
+their history lives in `log.md`. See `docs/CLAUDE.md` for the full lifecycle.

@@ -26,9 +26,10 @@ of the [`doc-writer`](../skills/doc-writer/SKILL.md) skill.)
 - **Sort order = read order.** Listing a folder alphabetically yields the intended reading
   sequence, top to bottom.
 - Subfolders are numbered too, and each contains its own `00-index.md`.
-- `CLAUDE.md` and `log.md` are the only unnumbered files — they are meta, not content.
-  `00-index.md` and `log.md` are the wiki's two **navigation tools**: the index answers
-  "what exists?", the log answers "what changed, and when?"
+- `CLAUDE.md`, `log.md`, and an optional `plans.md` are the only unnumbered files — they are
+  meta, not content. `00-index.md` and `log.md` are the wiki's two **navigation tools**: the
+  index answers "what exists?", the log answers "what changed, and when?" (`plans.md` covers
+  "what's intended" — see below; it's opt-in.)
 
 Example tree:
 
@@ -36,6 +37,7 @@ Example tree:
 docs/
 ├── CLAUDE.md             ← this schema (unnumbered)
 ├── log.md                ← append-only change log (unnumbered)
+├── plans.md              ← planned work — opt-in (unnumbered)
 ├── 00-index.md           ← top-level table of contents
 ├── 01-creating-a-skill.md
 ├── 02-installing-skills.md
@@ -101,3 +103,29 @@ with a stable prefix (`[ingest]` new page, `[update]` edit, `[lint]` cleanup):
 ```
 
 Append a line on every change, in the same pass that you touch the page and its index.
+
+## plans.md — the future (opt-in)
+
+`00-index.md` and `log.md` are the two core navigation files. `plans.md` is an **optional
+third surface** for forward-looking work: a task list of what's intended but **not yet true**.
+Add it only if you plan in-repo — many projects plan in issues/PRs instead, where a blank
+`plans.md` would just be noise.
+
+Keep it strictly segregated from the numbered knowledge pages. Those state what *is* true;
+`plans.md` states what *isn't yet*. Mixing them lets an agent read an intention as fact.
+
+**Lifecycle — promote-and-prune.** An item lives in `plans.md` only while it is still future.
+"Pruning" relocates the information; it never destroys it:
+
+```
+plans.md (future) ──ships──▶ numbered page (present) + log.md (past) ──▶ removed from plans.md
+                  └─abandoned──────────────────────────────────────────▶ removed from plans.md
+```
+
+- **Ships:** write the resulting knowledge into the right numbered page, append a `log.md`
+  line, then delete the item from `plans.md`.
+- **Abandoned:** delete it (optionally a `[plan] dropped …` line in `log.md`); no page, since
+  nothing became true.
+
+Never leave shipped or dead items lying around as checked-off boxes — that graveyard is
+exactly what this discipline avoids. Open and in-progress items live here; done items leave.

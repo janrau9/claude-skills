@@ -23,6 +23,7 @@ When the user asks to write, create, or update any `.md` documentation, the skil
 - `templates/docs-CLAUDE.md` → installed as a project's `docs/CLAUDE.md` (the schema).
 - `templates/00-index.md` → the starter top-level table of contents.
 - `templates/log.md` → the starter change log.
+- `templates/plans.md` → optional planned-work list (opt-in; never auto-created).
 
 ## Convention
 

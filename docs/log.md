@@ -9,3 +9,4 @@ See [CLAUDE.md](CLAUDE.md) for the conventions.
 2026-06-26 [ingest] 02-installing-skills.md — symlink install (global / per-project)
 2026-06-26 [ingest] 03-skills-catalog/00-index.md, 01-doc-writer.md — registered doc-writer
 2026-06-26 [ingest] log.md — added the change log as a first-class navigation file
+2026-06-26 [update] CLAUDE.md, 03-skills-catalog/01-doc-writer.md — added opt-in plans.md (promote-and-prune lifecycle)
