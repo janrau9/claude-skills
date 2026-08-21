@@ -26,11 +26,25 @@ everywhere the skill is installed.
 
 To remove a skill, just delete the symlink (e.g. `rm ~/.claude/skills/doc-writer`).
 
+## One-line install on another machine
+
+`remote-install.sh` fetches the repo itself and **copies** the skill (no clone left
+behind; re-run to update):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/janrau9/claude-skills/main/remote-install.sh \
+  | bash -s -- seiza
+```
+
+Same flags as `install.sh` (`--all`, `--project DIR`, `--list`), plus `--ref BRANCH`.
+Use `--project` to vendor a copy into a repo for teammates or Claude Code cloud sessions.
+
 ## Available skills
 
 | Skill | What it does |
 |-------|--------------|
 | [`doc-writer`](skills/doc-writer/SKILL.md) | Generates & maintains Markdown docs in a project's `docs/` folder as an LLM-wiki: numbered files/folders, a `00-index.md` table of contents, and dense cross-links. |
+| [`seiza`](skills/seiza/SKILL.md) | Applies Seiza (星座) — janrau's design language: Japanese architectural minimalism under a cosmic sky, monochrome OKLCH lightness hierarchy, one vermilion seal per view, Fibonacci space/time ladders. |
 
 ## Request a new skill
 

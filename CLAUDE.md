@@ -67,5 +67,6 @@ Installs are symlinks, so editing a skill here updates every install immediately
 
 ## Git
 
-Private GitHub repo (`claude-skills`). Commit and push **only when the user asks**.
+Public GitHub repo (`janrau9/claude-skills`). Commit and push **only when the user asks**.
+Never commit secrets or personal data — the repo is world-readable.
 Keep each skill in its own commit-able unit; conventional, descriptive commit messages.

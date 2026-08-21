@@ -14,3 +14,4 @@ See [CLAUDE.md](CLAUDE.md) for the conventions.
 2026-08-21 [ingest] 03-skills-catalog/02-seiza.md — registered seiza (the user's design language skill)
 2026-08-21 [update] 03-skills-catalog/02-seiza.md — rebrand: removed ancestry reference, credited to janrau
 2026-08-21 [update] 03-skills-catalog/02-seiza.md — documented the two adaptation points (font pair, seal hue)
+2026-08-21 [update] 02-installing-skills.md — documented remote-install.sh (copy-based one-liner for other machines)
