@@ -63,6 +63,23 @@ Everything else derives from these. When a case is unspecified, apply the laws.
 12. **Monochrome governs the chrome, not the content.** Photos, artwork, charts keep their
     color — a scroll in a gray room.
 
+## Adaptation points — the only two free variables
+
+Seiza has exactly two knobs; everything else above and below is law.
+
+- **Voice — `--font-sans` / `--font-mono`** (default Geist / Geist Mono). Constraints: one
+  superfamily — the mono must be the sans's sibling, or an intentionally matched pair with
+  similar x-height; the sans must ship real 400/500/600 (no faux weights), the mono
+  400/500; load with `display=swap` and real fallback stacks. The registers — sizes,
+  line-heights, tracking, casing — never change: **the family is the voice, the scale is
+  the law.**
+- **The seal — `--seal-hue`** (default 29, vermilion). Only the hue is free: lightness and
+  chroma are law — day `oklch(0.62 0.19 H)`, night `oklch(0.68 0.19 H)` — so any hue
+  carries the same perceived weight against both grounds. Every derived mark (washed star,
+  halo, error text) follows automatically via `var(--seal)`. If an extreme hue clips the
+  sRGB gamut, lower the chroma slightly — never the lightness. All seal laws (one per
+  view, never on text/hover/buttons/lines) hold regardless of hue.
+
 ## Color — one atmosphere per theme, only L moves
 
 Author in **OKLCH** (perceptual lightness — HSL's L lies). Each theme is one hue+chroma
@@ -80,14 +97,15 @@ pair; every neutral is an L stop on it. Light = warm washi paper `oklch(L 0.006 
 | text-3 | 0.55 `#767066` | 0.60 `#7d7d89` | tertiary floor |
 | text-2 | 0.45 `#5a554d` | 0.75 `#a8a8b3` | secondary |
 | ink | 0.23 `#211e19` | 0.95 `#eeedf4` | primary (never pure #fff) |
-| seal | `oklch(0.62 0.19 29)` `#e34a33` | `oklch(0.68 0.19 29)` `#f96146` | the one red |
+| seal | `oklch(0.62 0.19 H)` (H=29: `#e34a33`) | `oklch(0.68 0.19 H)` (H=29: `#f96146`) | the one accent — hue adaptable, L/C law |
 
 Selection inverts (ink bg, ground text). Full sheet with shadows, stars, durations:
 [references/tokens.css](references/tokens.css).
 
 ## Typography — one superfamily, hierarchy by light
 
-**Geist** (sans) + **Geist Mono** — same family, two voices; both on Google Fonts, loaded
+One superfamily in two voices — `--font-sans` + `--font-mono` (default **Geist** +
+**Geist Mono**, both on Google Fonts; the pair is an adaptation point, see above), loaded
 with `display=swap`. Weights **400/500/600 only**. Hierarchy instruments in order:
 lightness first, weight second, size last (one lowercase display moment per view).
 

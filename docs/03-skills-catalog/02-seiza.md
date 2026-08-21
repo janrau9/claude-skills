@@ -23,6 +23,9 @@ design system", "my style"), the skill supplies the full language as values and 
 - **Recipes** for every component, texture construction (scattered starfield, horizon
   arc, seal star), the two-state sky toggle (after Lea Verou), and hand/table/room
   responsiveness at 610/987px.
+- **Two adaptation points** — `--font-sans`/`--font-mono` (one superfamily, real
+  400/500/600) and `--seal-hue` (hue free; lightness and chroma are law) — everything
+  else is fixed.
 
 Stack-agnostic: it describes the aesthetic in values, never imposes a framework.
 

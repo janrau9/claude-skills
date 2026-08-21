@@ -13,3 +13,4 @@ See [CLAUDE.md](CLAUDE.md) for the conventions.
 2026-06-26 [update] CLAUDE.md, 03-skills-catalog/01-doc-writer.md — documented brownfield adoption (adopt vs coexist) + [adopt] log prefix
 2026-08-21 [ingest] 03-skills-catalog/02-seiza.md — registered seiza (the user's design language skill)
 2026-08-21 [update] 03-skills-catalog/02-seiza.md — rebrand: removed ancestry reference, credited to janrau
+2026-08-21 [update] 03-skills-catalog/02-seiza.md — documented the two adaptation points (font pair, seal hue)

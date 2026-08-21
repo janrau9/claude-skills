@@ -7,14 +7,17 @@ placement law); parents place them with gap/padding from the ken ladder
 
 ## Type registers (CSS)
 
+Families come from the adaptation points in [tokens.css](tokens.css) — `--font-sans` /
+`--font-mono` — never hardcoded. The registers below are law regardless of family.
+
 ```css
-.micro { font: 400 10px/16px "Geist Mono", ui-monospace, monospace;
+.micro { font: 400 10px/16px var(--font-mono);
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); }
 .small { font-size: 14px; line-height: 20px; }
 .longform { font-size: 18px; line-height: 32px; }          /* +0.01em tracking at night */
-h2, .heading { font: 600 20px/28px "Geist", system-ui, sans-serif;
+h2, .heading { font: 600 20px/28px var(--font-sans);
   letter-spacing: -0.01em; }                                /* top margin ≈ 2× bottom (prose decree) */
-.display { font: 600 56px/56px "Geist", system-ui, sans-serif;
+.display { font: 600 56px/56px var(--font-sans);
   letter-spacing: -0.02em; text-transform: lowercase; text-wrap: balance; }
 @media (max-width: 609px) { .display { font-size: 40px; line-height: 40px; } }
 ```
@@ -28,7 +31,7 @@ Hover (interactive cards only): shadow → level 2, `translateY(-2px)`, 233ms se
 ## Buttons
 
 ```css
-button { font: 500 14px/20px "Geist", system-ui, sans-serif; border-radius: 8px;
+button { font: 500 14px/20px var(--font-sans); border-radius: 8px;
   padding: 8px 16px; cursor: pointer; transition: background var(--t-micro) ease; }
 .btn-primary { background: var(--ink); color: var(--ground); border: none; }
 .btn-primary:hover { background: var(--ink-hover); }   /* further from the ground's light */
@@ -112,7 +115,7 @@ focus visible.
 
 ## Code
 
-Block: 14px Geist Mono, `line` border, radius 8, padding 24, `overflow-x: auto`.
+Block: 14px `var(--font-mono)`, `line` border, radius 8, padding 24, `overflow-x: auto`.
 Inline: mono 14 on a `surface` chip, radius 5, padding 1×6.
 **Syntax highlighting by weight and depth, not hue**: keywords 600 ink, strings text-2,
 comments text-3, everything else ink 400. Monochrome code — the seal never appears in code.

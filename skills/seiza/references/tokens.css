@@ -8,6 +8,15 @@
 :root {
   color-scheme: light dark;
 
+  /* ———— adaptation points: the ONLY two free variables in the system ————
+     Voice: one superfamily — the mono must be the sans's sibling (or a pair
+     with matched x-height); sans needs real 400/500/600, mono 400/500.
+     Seal: only the HUE is free — lightness and chroma are law, so any hue
+     carries the same perceived weight in both themes. */
+  --font-sans: "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
+  --seal-hue: 29; /* vermilion by default */
+
   /* atmosphere: day — warm washi paper, oklch(L 0.006 85) */
   --ground:      #f6f4f0; --ground:      oklch(0.97 0.006 85);
   --surface:     #fbfaf7; --surface:     oklch(0.985 0.006 85);
@@ -19,7 +28,7 @@
   --text-2:      #5a554d; --text-2:      oklch(0.45 0.01 85);
   --ink:         #211e19; --ink:         oklch(0.23 0.01 85);
   --ink-hover:   #131110; --ink-hover:   oklch(0.16 0.01 85);   /* further from the ground's light */
-  --seal:        #e34a33; --seal:        oklch(0.62 0.19 29);   /* ONE per view */
+  --seal:        #e34a33; --seal:        oklch(0.62 0.19 var(--seal-hue));   /* ONE per view */
 
   /* one light source, day: shadows drop straight down, in ink, ken geometry */
   --shadow-1: 0 8px 24px -8px  color-mix(in oklab, var(--ink) 10%, transparent);
@@ -58,7 +67,7 @@
     --text-2:      #a8a8b3; --text-2:      oklch(0.75 0.008 270);
     --ink:         #eeedf4; --ink:         oklch(0.95 0.005 270); /* starlight — never pure #fff */
     --ink-hover:   #fafafd; --ink-hover:   oklch(0.98 0.003 270);
-    --seal:        #f96146; --seal:        oklch(0.68 0.19 29);   /* brighter at night, as a star should be */
+    --seal:        #f96146; --seal:        oklch(0.68 0.19 var(--seal-hue));   /* brighter at night, as a star should be */
 
     /* one light source, night: shadows yield to a 1px edge-light on the top rim */
     --shadow-1: inset 0 1px 0 color-mix(in oklab, var(--ink) 7%, transparent);
@@ -83,7 +92,7 @@
   --text-2:      #a8a8b3; --text-2:      oklch(0.75 0.008 270);
   --ink:         #eeedf4; --ink:         oklch(0.95 0.005 270);
   --ink-hover:   #fafafd; --ink-hover:   oklch(0.98 0.003 270);
-  --seal:        #f96146; --seal:        oklch(0.68 0.19 29);
+  --seal:        #f96146; --seal:        oklch(0.68 0.19 var(--seal-hue));
   --shadow-1: inset 0 1px 0 color-mix(in oklab, var(--ink) 7%, transparent);
   --shadow-2: inset 0 1px 0 color-mix(in oklab, var(--ink) 10%, transparent);
   --shadow-3: inset 0 1px 0 color-mix(in oklab, var(--ink) 14%, transparent);
@@ -102,7 +111,7 @@ body {
   margin: 0;
   background: var(--ground);          /* always explicit — no transparent body */
   color: var(--ink);
-  font-family: "Geist", system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
