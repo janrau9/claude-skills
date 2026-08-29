@@ -48,20 +48,41 @@ Everything else derives from these. When a case is unspecified, apply the laws.
    off a ladder is a guess.
 6. **One light source.** Directly above. Day: shadows drop straight down (no x-offset),
    cast in ink. Night: shadows vanish; surfaces catch a 1px edge-light on the top rim.
-7. **The glow law.** Glow must cling to an edge — a rim, a lit top, a star's shine. It may
-   never float free: the free-floating gradient bloom is the signature of machine-made
+7. **The glow law.** Glow must cling to an edge — a rim, a lit top, the seal's shine. It
+   may never float free: the free-floating gradient bloom is the signature of machine-made
    pages and is banned. Wanted light gradation = emptiness does the work.
 8. **No orphan colors.** Every color (text included) is a token; every token crosses with
    the theme (610ms). Never a literal valid in one theme only.
 9. **Caps confinement.** UPPERCASE exists only in the micro register (mono 10, +0.08em,
    a few words). Never headings, never buttons. Display is lowercase (Latin only; CJK
    unaffected).
-10. **Stillness.** The design must be complete when perfectly still. Reduced motion stops
-    everything. Ambient animation only for genuinely live states. Texture never animates.
+10. **Stillness — still unless answering.** The design must be complete when perfectly
+    still, and texture never moves on its own — but it may *answer* the visitor: presence
+    holds a response, movement leaves a dying wake, a strike sends an attenuating wave
+    (see Texture). Reduced motion stops everything, answers included. Ambient loops only
+    for genuinely live states.
 11. **Downward-only imports.** Atomic layers (tokens → atoms → molecules → organisms →
     templates → pages): a layer imports any layer below, never same-level or above.
 12. **Monochrome governs the chrome, not the content.** Photos, artwork, charts keep their
     color — a scroll in a gray room.
+
+### Breaking the laws — shuhari (守破離)
+
+In Japanese arts, mastery has three stages: *shu* — keep the form; *ha* — break the form;
+*ri* — transcend it. The laws above are the form, and they may be broken — deliberately,
+when the break serves the work better than obedience would. Three tests make a break
+earned rather than sloppy:
+
+- **Name it.** Know which law you are breaking and say why. An accidental break is a
+  mistake; only a chosen one is design. (A gap off the ken ladder picked knowingly for a
+  reason is a decision; picked unknowingly, it is still a guess.)
+- **One at a time.** A view that breaks one law is making a statement; a view that breaks
+  three is not breaking the rules, it is ignoring them.
+- **The default holds.** A break never becomes precedent — the next view returns to the law.
+
+Example: the seal is one per view — but a landing hero where a handful of seal stars form
+a constellation (the system's own name made literal) can deserve the break. A second red
+badge in a toolbar never does.
 
 ## Adaptation points — the only two free variables
 
@@ -190,17 +211,36 @@ Durations are Fibonacci ms — **144** micro/state-change · **233** hover · **
 - Animate only opacity + transform (+ colors for crossfades). Never layout properties.
 - `prefers-reduced-motion` stops everything; the page must be complete when still.
 
-## Texture — points and strokes only
+## Texture — the canvas, the kikkō, and the still pond
 
-Vocabulary: **starfield** (13 stars scattered — never gridded — on a 233px CSS-gradient
-tile: 2 bright/3 median/8 faint, in ink: night 60/35/18%, day dust 20/12/7%), **arc** (a
-hairline of a 1597px circle, only the horizon showing, rim glow, ends masked — hero only),
-**image dissolve** (masks fade an image's foot into the ground / the stars), and **the seal
-star** (the seal's only cosmic form: a washed feathered glow-core + halo — never hard,
-never tiled, never *on* a line, though it may *rise behind* the horizon, occluded to a
-crest of shine). Budget: one texture per view, two on a hero. Always masked. Ground only —
-never on a surface. Perfectly still. Construction CSS:
-[references/texture.md](references/texture.md).
+Three materials, one law:
+
+- **The canvas — one field, two readings, subliminal.** Eight solid-core specks spread
+  across two φ-related tile periods (377px + 233px, adjacent Fibonacci — the layers drift,
+  the field never visibly repeats). The same scatter is **stars** by night (ink
+  34/21/13%) and **washi grain** by day (13/8/5%). A visitor should not notice it unless
+  they look. It is the ground's material — allowed wherever it dissolves under a mask.
+- **The kikkō lattice — the visible identity.** Grid-true hexagons, edge 21 (Fibonacci),
+  hairline strokes in the line token. *The sky changes; the structure stands*: the
+  lattice lives in both worlds. Every exposed edge is a **ragged frontier** — each column
+  starts and ends at its own depth (±2 rows, whole cells, rolled per visit); no aligned
+  cutoff, ever. One lattice field per view. Static **relief** cells (≤3, flat L-step
+  fills) remain a compositional option. The bevelled glossy tech-honeycomb is the named
+  "wrong."
+- **The still pond — texture answers.** At rest, glass. The cell under the pointer rises
+  (144, the settle) and *stays while the pointer stays*, releasing at 610; movement
+  leaves a dying wake; a click sends a constant-speed circular front whose amplitude
+  falls as `0.55·e^(−r/13)/√(1+r)` (spreading × absorption; below 5% the water does not
+  stir — the wave dies ~ring 12). On arrival, one wave radiates from the seal, then
+  stillness. Reduced motion: the pond stays glass, and complete.
+- **The seal in the pond**: the view's seal is ONE random lattice cell, washed red
+  (0.34). Strike it and its color rides the wave — transient; the pond always returns to
+  a single resting red cell.
+- **The image edge**: images dissolve into the canvas behind — stars by night, paper by
+  day. Monochrome governs the chrome, not the content.
+
+Ground only, always masked, never under running text. Full construction (CSS tiles,
+frontier mask generator, pond engine): [references/texture.md](references/texture.md).
 
 ## Theming & the sky toggle
 

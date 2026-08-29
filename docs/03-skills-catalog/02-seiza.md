@@ -20,12 +20,17 @@ design system", "my style"), the skill supplies the full language as values and 
   Geist-only type scale, the 8px "ken" spacing module with a Fibonacci ladder
   (8/16/24/40/64/104), Fibonacci radii (5/8/13/21/full) and durations
   (144/233/377/610/1597ms on "the settle" curve).
-- **Recipes** for every component, texture construction (scattered starfield, horizon
-  arc, seal star), the two-state sky toggle (after Lea Verou), and hand/table/room
+- **Recipes** for every component, the locked texture chapter (a subliminal two-period
+  speck canvas read as stars or washi grain, the kikkō hexagon lattice with ragged
+  frontiers, and the interactive "still pond" with physically attenuating waves and a
+  roaming seal cell), the two-state sky toggle (after Lea Verou), and hand/table/room
   responsiveness at 610/987px.
 - **Two adaptation points** — `--font-sans`/`--font-mono` (one superfamily, real
   400/500/600) and `--seal-hue` (hue free; lightness and chroma are law) — everything
   else is fixed.
+- **Shuhari (守破離)** — any law may be deliberately broken when the break is named,
+  singular, and serves the work better than obedience; the default always holds for the
+  next view.
 
 Stack-agnostic: it describes the aesthetic in values, never imposes a framework.
 

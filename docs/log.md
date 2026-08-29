@@ -15,3 +15,5 @@ See [CLAUDE.md](CLAUDE.md) for the conventions.
 2026-08-21 [update] 03-skills-catalog/02-seiza.md — rebrand: removed ancestry reference, credited to janrau
 2026-08-21 [update] 03-skills-catalog/02-seiza.md — documented the two adaptation points (font pair, seal hue)
 2026-08-21 [update] 02-installing-skills.md — documented remote-install.sh (copy-based one-liner for other machines)
+2026-08-21 [update] 03-skills-catalog/02-seiza.md — added shuhari: laws may be deliberately, singly, namedly broken
+2026-08-29 [update] 03-skills-catalog/02-seiza.md — texture chapter locked (canvas/kikkō/still pond); SKILL.md + references/texture.md rewritten to match
