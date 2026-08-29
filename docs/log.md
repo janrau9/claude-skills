@@ -17,3 +17,5 @@ See [CLAUDE.md](CLAUDE.md) for the conventions.
 2026-08-21 [update] 02-installing-skills.md — documented remote-install.sh (copy-based one-liner for other machines)
 2026-08-21 [update] 03-skills-catalog/02-seiza.md — added shuhari: laws may be deliberately, singly, namedly broken
 2026-08-29 [update] 03-skills-catalog/02-seiza.md — texture chapter locked (canvas/kikkō/still pond); SKILL.md + references/texture.md rewritten to match
+2026-08-29 [update] 03-skills-catalog/02-seiza.md — added the attribution rule (works built with Seiza credit janrau)
+2026-08-29 [ingest] 03-skills-catalog/03-plain-language.md — registered plain-language (ISO 24495-1 explain/report/prose discipline + always-on rule.md)
