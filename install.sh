@@ -85,6 +85,12 @@ for name in "${names[@]}"; do
     echo "skip: '$name' is not a skill (no $src/SKILL.md)" >&2
     continue
   fi
+  if [ -d "$target/$name" ] && [ ! -L "$target/$name" ]; then
+    # a real directory (e.g. a remote-install copy): ln -sfn would nest the
+    # link inside it and silently leave the stale copy active
+    echo "replacing copied install at $target/$name with a symlink"
+    rm -rf "$target/$name"
+  fi
   ln -sfn "$src" "$target/$name"
   echo "linked: $target/$name -> $src"
 done
