@@ -11,8 +11,8 @@ Families come from the adaptation points in [tokens.css](tokens.css) — `--font
 `--font-mono` — never hardcoded. The registers below are law regardless of family.
 
 ```css
-.micro { font: 400 10px/16px var(--font-mono);
-  letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); }
+.micro { font: 400 11px/16px var(--font-mono);
+  letter-spacing: 0.04em; color: var(--text-3); }   /* sentence case — no caps anywhere */
 .small { font-size: 14px; line-height: 20px; }
 .longform { font-size: 18px; line-height: 32px; }          /* +0.01em tracking at night */
 h2, .heading { font: 600 20px/28px var(--font-sans);

@@ -54,9 +54,10 @@ Everything else derives from these. When a case is unspecified, apply the laws.
    pages and is banned. Wanted light gradation = emptiness does the work.
 8. **No orphan colors.** Every color (text included) is a token; every token crosses with
    the theme (610ms). Never a literal valid in one theme only.
-9. **Caps confinement.** UPPERCASE exists only in the micro register (mono 10, +0.08em,
-   a few words). Never headings, never buttons. Display is lowercase (Latin only; CJK
-   unaffected).
+9. **No shouting.** All-caps is abolished — Geist has no true small caps and synthetic
+   ones render broken, so the micro register sets **sentence case** at 11px (the size
+   bump restores the x-height legibility that capitals used to provide at 10). Display
+   stays lowercase (Latin only; CJK unaffected). Emphasis never comes from casing.
 10. **Stillness — still unless answering.** The design must be complete when perfectly
     still, and texture never moves on its own — but it may *answer* the visitor: presence
     holds a response, movement leaves a dying wake, a strike sends an attenuating wave
@@ -147,7 +148,7 @@ lightness first, weight second, size last (one lowercase display moment per view
 
 | Register | Size/line | Face·weight | Treatment |
 |---|---|---|---|
-| micro | 10/16 | mono 400 | UPPERCASE, +0.08em, text-3 — the signature register |
+| micro | 11/16 | mono 400 | sentence case, +0.04em, text-3 — the signature register |
 | small | 14/20 | sans 400 | secondary UI |
 | base | 16/24 | sans 400 | UI body (16px = no mobile input zoom) |
 | long-form | 18/32 | sans 400 | articles; +0.01em tracking at night |
