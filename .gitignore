@@ -8,3 +8,6 @@ Thumbs.db
 
 # Local-only Claude settings (keep skills, ignore machine-specific config)
 .claude/settings.local.json
+
+# Playwright MCP session artifacts
+.playwright-mcp/
