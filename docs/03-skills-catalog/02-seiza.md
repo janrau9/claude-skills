@@ -14,10 +14,11 @@ When the user asks to build or restyle any web UI in their design system ("seiza
 design system", "my style"), the skill supplies the full language as values and laws:
 
 - **Twelve laws** (lightness hierarchy, the seal, the separation ladder, the placement
-  law, one light source, the glow law, no orphan colors, downward-only imports, …) that
-  resolve unspecified cases.
+  law, one light source, the glow law, no orphan colors, no shouting — all-caps is
+  abolished, stillness, downward-only imports, …) that resolve unspecified cases.
 - **Tokens**: two OKLCH atmospheres (washi day / blue-black night — night is native), a
-  Geist-only type scale, the 8px "ken" spacing module with a Fibonacci ladder
+  six-register type scale on the adaptable font pair — signature register: micro,
+  mono 11/16 sentence case — the 8px "ken" spacing module with a Fibonacci ladder
   (8/16/24/40/64/104), Fibonacci radii (5/8/13/21/full) and durations
   (144/233/377/610/1597ms on "the settle" curve).
 - **Recipes** for every component, the locked texture chapter (a subliminal two-period
@@ -42,7 +43,8 @@ Stack-agnostic: it describes the aesthetic in values, never imposes a framework.
 - `SKILL.md` — identity, the laws, and every scale as compact tables.
 - `references/tokens.css` — copy-paste token sheet, both themes, base styles.
 - `references/components.md` — component-by-component recipes.
-- `references/texture.md` — starfield/arc/seal-star construction CSS.
+- `references/texture.md` — the locked texture chapter as code: canvas speck tiles, the
+  kikkō lattice SVG with the ragged-frontier mask generator, the still-pond wave engine.
 - `references/architecture.md` — atomic layers + lint enforcement, sky-toggle JS, motion snippets.
 
 ## Living reference

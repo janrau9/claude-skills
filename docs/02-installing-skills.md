@@ -40,6 +40,10 @@ rm ~/.claude/skills/<name>
 Installs point back at this repo. Edit a skill here and every install — global and
 per-project — sees the change immediately, with no reinstall. See [`../install.sh`](../install.sh).
 
+If the target already exists as a **real directory** (e.g. a stale remote-install copy),
+`install.sh` removes it before linking — otherwise `ln -sfn` would nest the link inside it
+and silently leave the stale copy active. It announces the replacement when it happens.
+
 ## Remote one-liner (machines without this repo)
 
 [`../remote-install.sh`](../remote-install.sh) fetches the repo itself (shallow, to a

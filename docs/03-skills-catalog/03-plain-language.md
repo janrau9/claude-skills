@@ -25,13 +25,17 @@
 ## Structure
 
 - `SKILL.md` — the laws, five modes, protected spans, boundaries.
-- `rule.md` — ~20 agent-agnostic lines (intake / explain / report / everywhere) meant
-  to be appended to `~/.claude/CLAUDE.md` or a project's `AGENTS.md`, replacing any
-  overlapping writing rule. Skills load per-task; the always-on defaults need context.
-- `references/kill-list.md` — filler catalog with before → after pairs, including
-  structural tells (sycophantic openers, marketing triads, hedged closers).
-- `references/recipes.md` — shapes for commits, PRs, errors, incident reports,
-  release notes, docstrings, READMEs, the journey template, audit output.
+- `rule.md` — 25 agent-agnostic lines in four sections (Intake / Explaining /
+  Reporting back / Everywhere) meant to be appended to `~/.claude/CLAUDE.md` or a
+  project's `AGENTS.md`, replacing any overlapping writing rule rather than stacking
+  on it. Skills load per-task; the always-on defaults need context.
+- `references/kill-list.md` — ten kill categories with before → after pairs, from
+  throat-clearing and empty hedges through false confidence (the inverse failure) to
+  structural tells (sycophantic openers, marketing triads, hedged closers) and
+  apology padding in errors.
+- `references/recipes.md` — shapes for both explain registers (answer, journey),
+  commits, PRs, errors, incident reports, release notes, docstrings, READMEs, audit
+  output.
 
 ## Relations
 

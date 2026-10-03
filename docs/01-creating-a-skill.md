@@ -12,7 +12,9 @@ load it; the body holds the instructions; bulky material lives in subfolders.
 ## Steps
 
 1. **Name it.** Pick a short `kebab-case` name. Create `skills/<name>/SKILL.md`.
-2. **Frontmatter.** Add `name` (equal to the folder name) and a `description`.
+2. **Frontmatter.** Add `name` (equal to the folder name) and a `description`. Optional
+   keys the shipped skills use: `author` (seiza, plain-language) and `references` — a list
+   of doc slugs under `references/` (seiza).
 3. **Body.** Put the runtime instructions in the body. Move templates, scripts, and
    reference docs into `templates/`, `scripts/`, `references/` and link to them
    (progressive disclosure keeps the body small).
@@ -30,3 +32,5 @@ confused with another skill. Full rules live in the repo's [`CLAUDE.md`](../CLAU
 
 - Repo conventions: [`../CLAUDE.md`](../CLAUDE.md)
 - Example skill: [doc-writer](03-skills-catalog/01-doc-writer.md) — `skills/doc-writer/SKILL.md`
+- Heaviest progressive disclosure: [seiza](03-skills-catalog/02-seiza.md) — a compact
+  SKILL.md over four `references/` files

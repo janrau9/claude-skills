@@ -11,7 +11,9 @@
 
 When the user asks to write, create, or update any `.md` documentation, the skill:
 
-1. Ensures `docs/` exists, with a `docs/CLAUDE.md` (the convention) and a root `00-index.md`.
+1. Ensures `docs/` exists — a greenfield scaffold is three files from `templates/`:
+   `docs/CLAUDE.md` (the convention), `00-index.md`, and `log.md`. If the project already
+   has its own `docs/CLAUDE.md` or numbering, that convention wins over the skill's.
 2. Places the new page in the right numbered folder with the next free `NN-` prefix.
 3. Writes it Karpathy-style: H1 → one-line TL;DR → body, with relative cross-links and
    citations to raw sources (linked, never copied).
@@ -21,7 +23,8 @@ When the user asks to write, create, or update any `.md` documentation, the skil
 In an existing repo it follows any convention already in `docs/`, or — for a free-form
 `docs/` — offers to **adopt** it (renumber + index existing files) only after confirmation,
 defaulting to non-destructive coexistence otherwise. Existing pages are edited in place, not
-duplicated.
+duplicated. The project's root `README.md` and root `CLAUDE.md` are out of scope (entry
+points, not wiki pages) unless the user explicitly asks.
 
 ## Templates it ships
 
