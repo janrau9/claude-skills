@@ -131,7 +131,7 @@ pair; every neutral is an L stop on it. Light = warm washi paper `oklch(L 0.006 
 | overlay | 1.00 `#ffffff` | 0.28 `#26262f` | modals |
 | line | 0.90 `#e4e1da` | 0.27 `#24242d` | hairlines |
 | line-strong | 0.84 `#d2cec6` | 0.35 `#33333e` | strong rules |
-| text-3 | 0.55 `#767066` | 0.60 `#7d7d89` | tertiary floor |
+| text-3 | 0.54 `#716e68` | 0.60 `#7d7d89` | tertiary floor (AA on the ground: 4.6:1) |
 | text-2 | 0.45 `#5a554d` | 0.75 `#a8a8b3` | secondary |
 | ink | 0.23 `#211e19` | 0.95 `#eeedf4` | primary (never pure #fff) |
 | seal | `oklch(0.62 0.19 H)` (H=29: `#e34a33`) | `oklch(0.68 0.19 H)` (H=29: `#f96146`) | the one accent — hue adaptable, L/C law |

@@ -24,7 +24,7 @@
   --overlay:     #ffffff; --overlay:     oklch(1 0 0);
   --line:        #e4e1da; --line:        oklch(0.90 0.006 85);
   --line-strong: #d2cec6; --line-strong: oklch(0.84 0.006 85);
-  --text-3:      #767066; --text-3:      oklch(0.55 0.01 85);   /* readability floor */
+  --text-3:      #716e68; --text-3:      oklch(0.54 0.01 85);   /* readability floor */
   --text-2:      #5a554d; --text-2:      oklch(0.45 0.01 85);
   --ink:         #211e19; --ink:         oklch(0.23 0.01 85);
   --ink-hover:   #131110; --ink-hover:   oklch(0.16 0.01 85);   /* further from the ground's light */
