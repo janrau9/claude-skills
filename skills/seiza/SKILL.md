@@ -262,12 +262,13 @@ frontier mask generator, pond engine): [references/texture.md](references/textur
 
 Tokens on `:root` (light); dark under `@media (prefers-color-scheme: dark)` guarded
 `:root:not([data-theme="light"])`, and again under `:root[data-theme="dark"]`. The toggle
-is **two-state** (after Lea Verou, <https://lea.verou.me/blog/2026/dark-mode-toggles/>):
-label shows the current sky (`sky · day` / `sky · night`), click flips; if the target
-equals the system preference *at click time*, remove the override (silent return to
-system-tracking) — never show a "system" option in the persistent control (tri-state
-belongs only in settings panels). Crossfade via a temporary class; guarded localStorage.
-Full snippet: [references/architecture.md](references/architecture.md).
+is **two-state** (after Lea Verou, <https://lea.verou.me/blog/2026/dark-mode-toggles/>)
+wearing the common face: an icon button — outline sun by day, moon by night (Lucide, 16px
+ken box, 40px quiet target), the icon always showing the *current* sky. Click flips; if
+the target equals the system preference *at click time*, remove the override (silent
+return to system-tracking) — never show a "system" option in the persistent control
+(tri-state belongs only in settings panels). Crossfade via a temporary class; guarded
+localStorage. Full snippet: [references/architecture.md](references/architecture.md).
 
 ## Voice
 

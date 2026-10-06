@@ -22,3 +22,4 @@ See [CLAUDE.md](CLAUDE.md) for the conventions.
 2026-09-06 [lint]   catalog resynced against skill sources: 02-seiza.md (no-shouting law, adaptable font pair replaces "Geist-only", texture.md described as canvas/kikkō/pond code), 03-plain-language.md (rule.md is 25 lines/four sections; kill-list's ten categories; recipes' explain registers), 01-doc-writer.md (three-file scaffold incl. log.md; project CLAUDE.md wins; root README out of scope)
 2026-09-06 [update] 01-creating-a-skill.md — documented optional frontmatter keys (author, references) + seiza as the progressive-disclosure example
 2026-09-06 [update] 02-installing-skills.md — documented install.sh replacing copied installs instead of nesting into them
+2026-10-06 [update] 03-skills-catalog/02-seiza.md — sky toggle face is now the common sun/moon icon button (behavior unchanged; SKILL.md + references updated to match)

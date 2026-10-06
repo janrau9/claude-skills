@@ -132,5 +132,5 @@ Sticky, `z: var(--z-strip)`, padding 16×24, transparent at rest; when scrolled
 (`scrollY > 8`): `background: color-mix(in oklab, var(--ground) 90%, transparent)`,
 `backdrop-filter: blur(12px)`, hairline bottom border — transitions at 233. Wordmark
 600/14 left; links in the micro register right (active ink, inactive text-3); the sky
-toggle last (see [architecture.md](architecture.md)). On hand, links fold into a
+toggle last — the sun/moon icon button (see [architecture.md](architecture.md)). On hand, links fold into a
 full-screen overlay: ground background, lowercase display-scale links, Escape closes.

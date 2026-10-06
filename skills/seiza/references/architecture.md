@@ -57,18 +57,51 @@ export default [{
 (`dependency-cruiser` expresses the same rule with `forbidden` path rules if the project
 already uses it.)
 
-## The sky toggle (two-state, after Lea Verou)
+## The sky toggle (two-state, the common icon)
 
 <https://lea.verou.me/blog/2026/dark-mode-toggles/> — the model keeps three states, the
-control shows two. The label shows the current resolved sky; clicking flips it. System
-preference is evaluated **only at click time**; toggling to what the system already
-prefers stores nothing (silent return to system-tracking, so OS auto-switching keeps
-working). A stored choice is never demoted because the OS later matches it. Never show a
-"system" option in the persistent control — tri-state belongs only in settings panels.
-Pairs with `.sky-fade` in [tokens.css](tokens.css) for the 610ms crossfade.
+control shows two. The face is the common icon toggle: outline sun by day, moon by night
+(Lucide, 16px ken box, 1.5px stroke, on a 40px quiet target), always showing the
+**current** resolved sky; clicking flips it. System preference is evaluated **only at
+click time**; toggling to what the system already prefers stores nothing (silent return
+to system-tracking, so OS auto-switching keeps working). A stored choice is never demoted
+because the OS later matches it. Never show a "system" option in the persistent control —
+tri-state belongs only in settings panels. Pairs with `.sky-fade` in
+[tokens.css](tokens.css) for the 610ms crossfade; the icon swaps inside that crossfade.
+
+The face is pure CSS on the **same guards as the tokens**, so it can never disagree with
+the resolved sky and needs no script; JS carries only the aria-label and the click.
 
 ```html
-<button type="button" id="sky-toggle" aria-live="polite">sky</button>
+<button type="button" id="sky-toggle" aria-label="switch sky">
+  <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+       stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/>
+    <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+    <path d="M2 12h2"/><path d="M20 12h2"/>
+    <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+  </svg>
+  <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+       stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+  </svg>
+</button>
+```
+
+```css
+#sky-toggle { display: grid; place-items: center; width: 40px; height: 40px;
+  background: transparent; border: none; border-radius: 8px; padding: 0;
+  color: var(--text-3); cursor: pointer; transition: color var(--t-micro) ease; }
+#sky-toggle:hover { color: var(--ink); }   /* further from the ground's light */
+#sky-toggle .moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) #sky-toggle .sun  { display: none; }
+  :root:not([data-theme="light"]) #sky-toggle .moon { display: block; }
+}
+:root[data-theme="dark"] #sky-toggle .sun  { display: none; }
+:root[data-theme="dark"] #sky-toggle .moon { display: block; }
 ```
 
 ```js
@@ -83,13 +116,12 @@ Pairs with `.sky-fade` in [tokens.css](tokens.css) for the 610ms crossfade.
   if (stored === 'light' || stored === 'dark') root.dataset.theme = stored;
 
   var resolved = function () { return root.dataset.theme || (mq.matches ? 'dark' : 'light'); };
-  var setLabel = function () {
-    var cur = resolved();
-    toggle.textContent = 'sky · ' + names[cur];
-    toggle.setAttribute('aria-label', 'switch to ' + names[cur === 'dark' ? 'light' : 'dark'] + ' sky');
+  var setAria = function () {
+    var next = resolved() === 'dark' ? 'light' : 'dark';
+    toggle.setAttribute('aria-label', 'switch to ' + names[next] + ' sky');
   };
-  setLabel();
-  if (mq.addEventListener) mq.addEventListener('change', setLabel); // label only — never touch stored overrides
+  setAria();
+  if (mq.addEventListener) mq.addEventListener('change', setAria); // aria only — never touch stored overrides
 
   var fadeTimer = null;
   toggle.addEventListener('click', function () {
@@ -105,7 +137,7 @@ Pairs with `.sky-fade` in [tokens.css](tokens.css) for the 610ms crossfade.
       root.dataset.theme = target;
       try { localStorage.setItem('seiza-sky', target); } catch (e) {}
     }
-    setLabel();
+    setAria();
   });
 })();
 ```

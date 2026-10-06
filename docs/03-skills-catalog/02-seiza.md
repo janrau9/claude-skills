@@ -24,8 +24,8 @@ design system", "my style"), the skill supplies the full language as values and 
 - **Recipes** for every component, the locked texture chapter (a subliminal two-period
   speck canvas read as stars or washi grain, the kikkō hexagon lattice with ragged
   frontiers, and the interactive "still pond" with physically attenuating waves and a
-  roaming seal cell), the two-state sky toggle (after Lea Verou), and hand/table/room
-  responsiveness at 610/987px.
+  roaming seal cell), the two-state sky toggle (after Lea Verou, worn as the common
+  sun/moon icon button), and hand/table/room responsiveness at 610/987px.
 - **Two adaptation points** — `--font-sans`/`--font-mono` (one superfamily, real
   400/500/600) and `--seal-hue` (hue free; lightness and chroma are law) — everything
   else is fixed.
