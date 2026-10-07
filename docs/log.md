@@ -23,3 +23,4 @@ See [CLAUDE.md](CLAUDE.md) for the conventions.
 2026-09-06 [update] 01-creating-a-skill.md — documented optional frontmatter keys (author, references) + seiza as the progressive-disclosure example
 2026-09-06 [update] 02-installing-skills.md — documented install.sh replacing copied installs instead of nesting into them
 2026-10-06 [update] 03-skills-catalog/02-seiza.md — sky toggle face is now the common sun/moon icon button (behavior unchanged; SKILL.md + references updated to match)
+2026-10-07 [update] 03-skills-catalog/02-seiza.md — kikkō presence rule: the entry view carries a lattice field by default (SKILL.md + texture.md minimum band added)

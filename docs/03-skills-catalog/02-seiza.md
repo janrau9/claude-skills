@@ -23,7 +23,8 @@ design system", "my style"), the skill supplies the full language as values and 
   (144/233/377/610/1597ms on "the settle" curve).
 - **Recipes** for every component, the locked texture chapter (a subliminal two-period
   speck canvas read as stars or washi grain, the kikkō hexagon lattice with ragged
-  frontiers, and the interactive "still pond" with physically attenuating waves and a
+  frontiers — present on the entry view by default, it is the visible signature —
+  and the interactive "still pond" with physically attenuating waves and a
   roaming seal cell), the two-state sky toggle (after Lea Verou, worn as the common
   sun/moon icon button), and hand/table/room responsiveness at 610/987px.
 - **Two adaptation points** — `--font-sans`/`--font-mono` (one superfamily, real

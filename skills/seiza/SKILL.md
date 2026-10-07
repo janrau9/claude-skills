@@ -1,7 +1,7 @@
 ---
 name: seiza
 author: janrau
-description: Apply the Seiza (星座, "constellation") design language — janrau's personal design system; Japanese architectural minimalism under a cosmic sky. Monochrome OKLCH lightness hierarchy, ONE vermilion "seal" accent per view, a single Geist superfamily, Fibonacci space/time ladders, hairline structure, starfield texture, full light/dark theming. Use whenever building or restyling any web UI (site, app, dashboard, blog, docs, component) where the user wants their design system or signature look — trigger phrases include "seiza", "janrau", "my design system", "my design language", "my style". Stack-agnostic — values and laws, not framework code. Do NOT use when the user names a different aesthetic or asks for a deliberately off-brand one-off.
+description: Apply the Seiza (星座, "constellation") design language — janrau's personal design system; Japanese architectural minimalism under a cosmic sky. Monochrome OKLCH lightness hierarchy, ONE vermilion "seal" accent per view, a single Geist superfamily, Fibonacci space/time ladders, hairline structure, the kikkō hexagon lattice as the visible signature over a subliminal starfield, full light/dark theming. Use whenever building or restyling any web UI (site, app, dashboard, blog, docs, component) where the user wants their design system or signature look — trigger phrases include "seiza", "janrau", "my design system", "my design language", "my style". Stack-agnostic — values and laws, not framework code. Do NOT use when the user names a different aesthetic or asks for a deliberately off-brand one-off.
 references: [tokens, components, texture, architecture]
 ---
 
@@ -38,7 +38,14 @@ Everything else derives from these. When a case is unspecified, apply the laws.
    lightness (darker by day, brighter at night).
 2. **The seal law.** One vermilion mark per view, never more. Never on running text, hover
    states, or buttons. A validation error *claims* the view's seal (all decorative seals
-   yield). Destructive actions get words + confirmation, never red.
+   yield). Destructive actions get words + confirmation, never red. **Placement is
+   semantic — the seal's red is a state color.** A decorative seal stands only where it
+   is semantically inert: where removing it changes nothing but the signature (a kicker,
+   a colophon, the hero's sky, one lattice cell — the hanko is pressed beside the
+   signature, never on the painting's subject). Beside a form control, a metric, a
+   status word, a data row, or atop an icon, a red mark reads as error, loss, alert, or
+   an unread badge — whatever was meant by it. Never seal those places. Any seal hue
+   obeys this; red most of all.
 3. **The separation ladder.** To separate two things use the weakest tool that works:
    space → hairline → surface. One boundary, one rung. A surface is earned only by
    objecthood (a thing acted on as a unit) or a change of depth; it includes its hairline.
@@ -115,7 +122,8 @@ Seiza has exactly two knobs; everything else above and below is law.
   carries the same perceived weight against both grounds. Every derived mark (washed star,
   halo, error text) follows automatically via `var(--seal)`. If an extreme hue clips the
   sRGB gamut, lower the chroma slightly — never the lightness. All seal laws (one per
-  view, never on text/hover/buttons/lines) hold regardless of hue.
+  view, never on text/hover/buttons/lines, only in semantically inert positions) hold
+  regardless of hue.
 
 ## Color — one atmosphere per theme, only L moves
 
@@ -240,9 +248,14 @@ Three materials, one law:
   hairline strokes in the line token. *The sky changes; the structure stands*: the
   lattice lives in both worlds. Every exposed edge is a **ragged frontier** — each column
   starts and ends at its own depth (±2 rows, whole cells, rolled per visit); no aligned
-  cutoff, ever. One lattice field per view. Static **relief** cells (≤3, flat L-step
-  fills) remain a compositional option. The bevelled glossy tech-honeycomb is the named
-  "wrong."
+  cutoff, ever. One lattice field per view — **and the entry view carries one by
+  default**: the lattice is the signature, and a first pass that omits it has hidden
+  the identity. The ladder: a static dissolved band (tile + mask, no JS — the floor) →
+  the ragged frontier → the still pond. Interior and dense views may go without;
+  skipping the *entry* view is a shuhari break to name. The field also gives the seal
+  its default inert home — one random cell, washed red. Static **relief** cells (≤3,
+  flat L-step fills) remain a compositional option. The bevelled glossy tech-honeycomb
+  is the named "wrong."
 - **The still pond — texture answers.** At rest, glass. The cell under the pointer rises
   (144, the settle) and *stays while the pointer stays*, releasing at 610; movement
   leaves a dying wake; a click sends a constant-speed circular front whose amplitude
@@ -290,6 +303,7 @@ Keep the stack. Work in this order: (1) collapse colors to the two atmospheres,
 (2) install Geist/Geist Mono and re-cast the registers, (3) thin borders to hairlines and
 align radii to 5/8/13/21, (4) re-cut spacing onto the ken ladder and strip child margins,
 (5) re-map shadows to the three levels + night edge-light, (6) add theming + the sky
-toggle, (7) re-time motion onto the Fibonacci ladder, (8) finish with at most one texture
-and place the seal. Stop before it gets busy: **if a screen feels empty, that is usually
+toggle, (7) re-time motion onto the Fibonacci ladder, (8) finish the entry view with the
+lattice (the dissolved band at minimum) and set the seal in one of its cells — one field,
+one mark. Stop before it gets busy: **if a screen feels empty, that is usually
 correct.**

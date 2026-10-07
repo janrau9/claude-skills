@@ -61,6 +61,31 @@ is the named "wrong."
 }
 ```
 
+### The minimum band — presence without the engine
+
+The entry view carries a lattice field **by default** (the presence rule in SKILL.md's
+Texture chapter). When the frontier/pond engine isn't warranted, this dissolved band is
+the floor: pure CSS, no JS. The dissolve takes every edge to nothing, so no cell
+terminates on an aligned cutoff — the spirit of the frontier without the generator.
+
+```html
+<div class="lattice-band" aria-hidden="true"><div class="lattice"></div></div>
+```
+
+```css
+.lattice-band {
+  position: relative; height: 144px; pointer-events: none;
+  mask-image: radial-gradient(ellipse 100% 144% at 50% 89%, black 21%, transparent 79%);
+  /* + -webkit-mask-image duplicate; masks NEST — the band fades, the inner tile draws */
+}
+.lattice-band > .lattice { position: absolute; inset: 0; }
+```
+
+Place it in the hero's sky (ellipse `at 50% 0%`) or as the closing band before the
+footer — *open under the sky, end inside the structure*. Upgrade path: wrap it in
+`applyRagged` (below) for a true frontier; add the cell engine for the still pond. The
+field also hosts the view's seal — one random cell, washed red at 0.34.
+
 ### The frontier — no aligned cutoffs, ever
 
 Every exposed edge of a lattice field terminates cell by cell: each hexagon **column**
