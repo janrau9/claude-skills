@@ -44,7 +44,8 @@ Use `--project` to vendor a copy into a repo for teammates or Claude Code cloud 
 | Skill | What it does |
 |-------|--------------|
 | [`doc-writer`](skills/doc-writer/SKILL.md) | Generates & maintains Markdown docs in a project's `docs/` folder as an LLM-wiki: numbered files/folders, a `00-index.md` table of contents, and dense cross-links. |
-| [`seiza`](skills/seiza/SKILL.md) | Applies Seiza (星座) — janrau's design language: Japanese architectural minimalism under a cosmic sky, monochrome OKLCH lightness hierarchy, one vermilion seal per view, Fibonacci space/time ladders. |
+| [`seiza`](skills/seiza/SKILL.md) | Applies Seiza (星座) — janrau's design language: Japanese architectural minimalism under a cosmic sky, monochrome OKLCH lightness hierarchy, one vermilion seal per view, the kikkō hexagon lattice as its visible signature, Fibonacci space/time ladders. |
+| [`plain-language`](skills/plain-language/SKILL.md) | ISO 24495-1 for engineers — concise answer-first explanations, honest report-backs (verified / assumed / not tested), prose without filler; ships an always-on `rule.md` for `~/.claude/CLAUDE.md` or `AGENTS.md`. |
 
 ## Request a new skill
 

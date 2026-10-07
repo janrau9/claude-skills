@@ -36,11 +36,15 @@
   --shadow-3: 0 24px 64px -24px color-mix(in oklab, var(--ink) 18%, transparent);
   --scrim: color-mix(in oklab, var(--ink) 30%, transparent);
 
-  /* texture: stars in ink (day = dust); glow clings to edges only */
-  --star-1: color-mix(in oklab, var(--ink) 20%, transparent);
-  --star-2: color-mix(in oklab, var(--ink) 12%, transparent);
-  --star-3: color-mix(in oklab, var(--ink) 7%, transparent);
-  --wash:   color-mix(in oklab, var(--ink) 4%, transparent);
+  /* the canvas — one scatter, two readings (locked): stars draw the night layer,
+     grain the day layer; which layer shows rides --tex-day / --tex-night */
+  --star-1: color-mix(in oklab, var(--ink) 34%, transparent);
+  --star-2: color-mix(in oklab, var(--ink) 21%, transparent);
+  --star-3: color-mix(in oklab, var(--ink) 13%, transparent);
+  --grain-1: color-mix(in oklab, var(--ink) 13%, transparent);
+  --grain-2: color-mix(in oklab, var(--ink) 8%, transparent);
+  --grain-3: color-mix(in oklab, var(--ink) 5%, transparent);
+  --tex-day: 1; --tex-night: 0;
 
   /* time on the golden ladder */
   --t-micro:    144ms;
@@ -75,10 +79,8 @@
     --shadow-3: inset 0 1px 0 color-mix(in oklab, var(--ink) 14%, transparent);
     --scrim: rgb(0 0 8 / 0.6);
 
-    --star-1: color-mix(in oklab, var(--ink) 60%, transparent);
-    --star-2: color-mix(in oklab, var(--ink) 35%, transparent);
-    --star-3: color-mix(in oklab, var(--ink) 18%, transparent);
-    --wash:   color-mix(in oklab, var(--ink) 8%, transparent);
+    /* star/grain mixes ride var(--ink), which just flipped — only the layer flags change */
+    --tex-day: 0; --tex-night: 1;
   }
 }
 :root[data-theme="dark"] {
@@ -97,10 +99,7 @@
   --shadow-2: inset 0 1px 0 color-mix(in oklab, var(--ink) 10%, transparent);
   --shadow-3: inset 0 1px 0 color-mix(in oklab, var(--ink) 14%, transparent);
   --scrim: rgb(0 0 8 / 0.6);
-  --star-1: color-mix(in oklab, var(--ink) 60%, transparent);
-  --star-2: color-mix(in oklab, var(--ink) 35%, transparent);
-  --star-3: color-mix(in oklab, var(--ink) 18%, transparent);
-  --wash:   color-mix(in oklab, var(--ink) 8%, transparent);
+  --tex-day: 0; --tex-night: 1;
 }
 
 /* ———— base ———— */

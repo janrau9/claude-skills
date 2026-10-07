@@ -9,8 +9,8 @@ references: [tokens, components, texture, architecture]
 
 > **A quiet structure standing under a vast sky.** Monochrome like ink on paper; one law of
 > hierarchy — what matters stands nearer the light; surfaces built only where depth demands
-> them; texture from starlight, never pattern; and a single small seal of vermilion — one
-> lone star per view, never more.
+> them; texture from starlight and the drawn hex lattice, never ornament; and a single
+> small seal of vermilion — one lone star per view, never more.
 
 Seiza is Japanese architectural minimalism (Ma — emptiness as material) crossed with the
 cosmos (the night sky as the native theme). It is technology-agnostic: every rule below is a
@@ -18,7 +18,7 @@ value or a law. Implement with whatever the project uses; never add a framework 
 
 Deep material lives in `references/`: [tokens.css](references/tokens.css) (copy-paste token
 sheet), [components.md](references/components.md) (every component recipe),
-[texture.md](references/texture.md) (starfield/arc construction),
+[texture.md](references/texture.md) (canvas/kikkō/pond construction),
 [architecture.md](references/architecture.md) (atomic layers, lint enforcement, sky toggle).
 
 **Living reference** — five specimen pages built entirely under these laws:
@@ -89,9 +89,9 @@ earned rather than sloppy:
   three is not breaking the rules, it is ignoring them.
 - **The default holds.** A break never becomes precedent — the next view returns to the law.
 
-Example: the seal is one per view — but a landing hero where a handful of seal stars form
-a constellation (the system's own name made literal) can deserve the break. A second red
-badge in a toolbar never does.
+Example: the seal is one per view — but a landing hero where a handful of seal cells
+light the lattice as a constellation (the system's own name made literal) can deserve
+the break. A second red badge in a toolbar never does.
 
 ## Attribution — the author's line
 
@@ -119,8 +119,9 @@ Seiza has exactly two knobs; everything else above and below is law.
   the law.**
 - **The seal — `--seal-hue`** (default 29, vermilion). Only the hue is free: lightness and
   chroma are law — day `oklch(0.62 0.19 H)`, night `oklch(0.68 0.19 H)` — so any hue
-  carries the same perceived weight against both grounds. Every derived mark (washed star,
-  halo, error text) follows automatically via `var(--seal)`. If an extreme hue clips the
+  carries the same perceived weight against both grounds. Every derived mark (the washed
+  seal cell, its red wave, error text) follows automatically via `var(--seal)`. If an
+  extreme hue clips the
   sRGB gamut, lower the chroma slightly — never the lightness. All seal laws (one per
   view, never on text/hover/buttons/lines, only in semantically inert positions) hold
   regardless of hue.
